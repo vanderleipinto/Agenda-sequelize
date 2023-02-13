@@ -54,6 +54,9 @@ CONTROLLERS
 
 Criam-se as pastas controllers e models para a estrutura MVC
 
+dentro da pasta controller temos um arquivo para cada página.
+Cria-se as estruturas dos controllers e importa nas rotas.
+
 
 
 
