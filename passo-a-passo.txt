@@ -1,0 +1,72 @@
+Requisitos (já instalados globalmente):
+ nodemon
+ typescript
+ ts-node 
+
+Cria-se o projeto
+ npm init
+
+Instala-se o typescript no projeto
+  tsc --init
+
+Criam-se as pastas principais dentro do projeto
+  src e dist
+
+No arquivo de configuração tsconfig.json faz-se as seguintes alterações:
+
+"target": "es6",
+"rootDir": "./src",
+"outDir": "./dist", 
+"moduleResolution": "node", 
+
+Instalam-se as dependências 
+  npm install express mustache-express dotenv
+
+Instalação das dependências de desenvolvimentos (types)
+  npm install --save-dev @types/express @types/mustache-express @types/node 
+
+Alterações dentro de package.json, em scripts deve-se adicionar o comando para rodar o projeto e deixá-lo na escuta.
+
+"start-dev": "nodemon -e ts,json,mustache src/server.ts"
+-e é para monitorar certas extensões 
+
+Criar o arquivo .env para as variáveis globais na pasta raiz.
+    PORT=2000
+
+    MYSQL_DB=teste
+    MYSQL_USER=root
+    MYSQL_PASSWORD=1234
+    MYSQL_PORT=3306
+
+Criar pasta src/view para as views do mustache e uma pasta chamada public na raiz para arquivos css, imagens etc
+Configurar essas pastas dentro de server.ts
+
+Criar rotas
+
+pasta src/routes cria o arquivo index.ts esse arquivo terá as rotas que serão usadas no server.ts
+dentro desse arquivo importa-se o Router do express e configuram-se rotas com o router.get 
+  const router = Router();
+  router.get("/", (req, res) => {
+    res.send("home");
+  });
+
+CONTROLLERS
+
+Criam-se as pastas controllers e models para a estrutura MVC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
